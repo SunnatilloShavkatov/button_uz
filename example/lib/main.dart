@@ -39,11 +39,12 @@ class _HomePageState extends State<HomePage> {
           FlutterButton(
             height: 56,
             width: 300,
+            alignment: Alignment.center,
             color: Colors.blue,
             child: Text("Click to here."),
-            margin: const EdgeInsets.all(16),
+            margin: const EdgeInsets.all(8),
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(20),
+              borderRadius: BorderRadius.circular(28),
               side: BorderSide(
                 width: 2,
                 color: Colors.black,
@@ -54,12 +55,6 @@ class _HomePageState extends State<HomePage> {
           FlutterButton(
             child: Text("Click to here."),
             padding: const EdgeInsets.all(16),
-            shape: CircleBorder(
-              side: BorderSide(
-                color: Colors.black,
-                width: 1,
-              ),
-            ),
             onPressed: () => print("object"),
           ),
           Container(

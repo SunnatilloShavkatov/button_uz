@@ -12,7 +12,6 @@ import 'package:flutter/widgets.dart';
 /// be used for custom Material buttons that optionally incorporate defaults
 /// from the themes or from app-specific sources.
 ///
-/// [RaisedButton] and [FlatButton] configure a [RawMaterialButton] based
 /// on the current [Theme] and [ButtonTheme].
 @Category(<String>['Material', 'Button'])
 class FlutterButton extends StatefulWidget {
@@ -29,7 +28,6 @@ class FlutterButton extends StatefulWidget {
     this.onLongPress,
     this.onHighlightChanged,
     this.mouseCursor,
-    this.textStyle,
     this.color,
     this.focusColor,
     this.hoverColor,
@@ -54,6 +52,7 @@ class FlutterButton extends StatefulWidget {
     this.width,
     this.height,
     this.margin,
+    this.alignment,
   })  : materialTapTargetSize =
             materialTapTargetSize ?? MaterialTapTargetSize.padded,
         assert(shape != null),
@@ -110,18 +109,6 @@ class FlutterButton extends StatefulWidget {
   /// If this property is null, [MaterialStateMouseCursor.clickable] will be used.
   /// {@endtemplate}
   final MouseCursor mouseCursor;
-
-  /// Defines the default text style, with [Material.textStyle], for the
-  /// button's [child].
-  ///
-  /// If [TextStyle.color] is a [MaterialStateProperty<Color>], [MaterialStateProperty.resolve]
-  /// is used for the following [MaterialState]s:
-  ///
-  ///  * [MaterialState.pressed].
-  ///  * [MaterialState.hovered].
-  ///  * [MaterialState.focused].
-  ///  * [MaterialState.disabled].
-  final TextStyle textStyle;
 
   /// The color for the button's [Material] when it has the input focus.
   final Color focusColor;
@@ -295,6 +282,8 @@ class FlutterButton extends StatefulWidget {
 
   final Color color;
 
+  final Alignment alignment;
+
   @override
   _FlutterButtonState createState() => _FlutterButtonState();
 }
@@ -371,8 +360,6 @@ class _FlutterButtonState extends State<FlutterButton> {
 
   @override
   Widget build(BuildContext context) {
-    final Color effectiveTextColor = MaterialStateProperty.resolveAs<Color>(
-        widget.textStyle?.color, _states);
     final ShapeBorder effectiveShape =
         MaterialStateProperty.resolveAs<ShapeBorder>(widget.shape, _states);
     final Offset densityAdjustment = widget.visualDensity.baseSizeAdjustment;
@@ -400,7 +387,6 @@ class _FlutterButtonState extends State<FlutterButton> {
         margin: widget.margin,
         child: Material(
           elevation: _effectiveElevation,
-          textStyle: widget.textStyle?.copyWith(color: effectiveTextColor),
           shape: effectiveShape,
           color: widget.color,
           type: widget.color == null
@@ -428,7 +414,7 @@ class _FlutterButtonState extends State<FlutterButton> {
               padding: padding,
               width: widget.width,
               height: widget.height,
-              alignment: Alignment.center,
+              alignment: widget.alignment,
               child: widget.child,
             ),
           ),
