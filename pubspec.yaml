@@ -1,7 +1,7 @@
-name: flutter_button
+name: flutterbutton
 description: A new Flutter package.
 version: 0.0.1
-author: Sunnatillo Shavkatov
+# author: Sunnatillo Shavkatov
 homepage: https://github.com/SunnatilloQuantic/flutter_buttom
 
 environment:

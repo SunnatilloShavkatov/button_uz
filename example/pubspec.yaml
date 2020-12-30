@@ -11,7 +11,7 @@ dependencies:
   flutter:
     sdk: flutter
 
-  flutter_button:
+  flutterbutton:
     path: D:\Flutter\flutter_button
 
 dev_dependencies:
