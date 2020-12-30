@@ -4,6 +4,7 @@
 
 # <img src="https://github.com/SunnatilloQuantic/button_uz/blob/main/assets/demo.jpg"  width="160" height="320" >
 
+# <img src="https://github.com/SunnatilloQuantic/button_uz/blob/main/assets/demogif.gif"  width="160" height="320" >
 
 ### Example  
   
