@@ -1,7 +1,7 @@
 name: button_uz
-description: A new Flutter package.
+description: This button provides many conveniences. These are with, height, margin, border, raduis and others.
 version: 0.0.1
-authors: Sunnatillo Shavkatov
+# authors: Sunnatillo Shavkatov
 homepage: https://github.com/SunnatilloQuantic/flutter_buttom
 
 environment:

@@ -278,6 +278,7 @@ class FlutterButton extends StatefulWidget {
 
   final EdgeInsetsGeometry margin;
 
+  /// The color of the button's [Material].
   final Color color;
 
   @override

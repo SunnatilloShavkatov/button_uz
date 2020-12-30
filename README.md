@@ -6,8 +6,7 @@
 
 ### Example  
   
-```
-import 'package:flutter/material.dart';
+```import 'package:flutter/material.dart';
 import 'package:button_uz/button_uz.dart';
 
 void main() {
@@ -139,12 +138,11 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
-}
-```
+}```
 
 ## Getting Started
 
-To use this plugin, add `expandable_text_widget` as a [dependency in your pubspec.yaml file](https://pub.dev/packages/expandable_text_widget).  
+To use this plugin, add `button_uz` as a [dependency in your pubspec.yaml file](https://pub.dev/packages/button_uz).  
 
 This project is a starting point for a Dart
 [package](https://flutter.dev/developing-packages/),
