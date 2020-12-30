@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutterbutton/flutter_button.dart';
+import 'package:button_uz/button_uz.dart';
 
 void main() {
   runApp(MyApp());
@@ -10,6 +10,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Button',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
@@ -34,15 +35,37 @@ class _HomePageState extends State<HomePage> {
         elevation: 1.0,
         centerTitle: true,
       ),
-      body: Column(
+      body: ListView(
         children: [
-          FlutterButton(
-            height: 56,
-            width: 300,
+          Container(
             alignment: Alignment.center,
-            color: Colors.blue,
+            child: FlutterButton(
+              height: 56,
+              width: 200,
+              color: Colors.blue,
+              child: Text("Click to here."),
+              margin: const EdgeInsets.all(8),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(28),
+                side: BorderSide(
+                  width: 2,
+                  color: Colors.black,
+                ),
+              ),
+              onPressed: () => print("object"),
+            ),
+          ),
+          FlutterButton(
             child: Text("Click to here."),
-            margin: const EdgeInsets.all(8),
+            padding: const EdgeInsets.all(16),
+            onPressed: () => print("object"),
+          ),
+          SizedBox(height: 20),
+          FlutterButton(
+            child: Text("BUTTON"),
+            color: Colors.white,
+            splashColor: Colors.amber,
+            padding: const EdgeInsets.all(16),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(28),
               side: BorderSide(
@@ -52,72 +75,57 @@ class _HomePageState extends State<HomePage> {
             ),
             onPressed: () => print("object"),
           ),
+          SizedBox(height: 20),
           FlutterButton(
-            child: Text("Click to here."),
-            padding: const EdgeInsets.all(16),
-            onPressed: () => print("object"),
-          ),
-          Container(
+            child: Text("BUTTON"),
             height: 80,
-            width: 80,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              border: Border.all(
-                width: 1,
+            color: Colors.white,
+            splashColor: Colors.amber,
+            highlightColor: Colors.red,
+            padding: const EdgeInsets.all(16),
+            shape: CircleBorder(
+              side: BorderSide(
+                width: 2,
                 color: Colors.black,
               ),
             ),
-            child: Center(child: Text("Click to here.")),
-          )
-          //   FlutterButton(
-          //     alignment: Alignment.center,
-          //     color: Colors.blue,
-          //     child: Text("Click"),
-          //     onPressed: () => print("object"),
-          //     height: 56,
-          //     width: 300,
-          //     margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
-          //   ),
-          //   Row(
-          //     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          //     children: [
-          //       FlutterButton(
-          //         shape: CircleBorder(),
-          //         alignment: Alignment.center,
-          //         color: Colors.blue,
-          //         child: Text("Click"),
-          //         onPressed: () => print("object"),
-          //         height: 56,
-          //         width: 56,
-          //         margin:
-          //             const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
-          //       ),
-          //       FlutterButton(
-          //         // decoration: BoxDecoration(
-          //         //   // color: Colors.white,
-          //         //   shape: BoxShape.circle,
-          //         //   boxShadow: [
-          //         //     BoxShadow(
-          //         //       color: Color(0xff000000).withOpacity(0.2),
-          //         //       offset: Offset(0, 5),
-          //         //       blurRadius: 20,
-          //         //       spreadRadius: 3,
-          //         //     ),
-          //         //   ],
-          //         // ),
-          //         shape: CircleBorder(
-          //           side: BorderSide(width: 1, color: Colors.black),
-          //         ),
-          //         child: Text("Click"),
-          //         onPressed: () => print("object"),
-          //         // height: 56,
-          //         // width: 56,
-          //         // margin:
-          //         //     const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
-          //       ),
-          //     ],
-          //   ),
-          // ],
+            onPressed: () => print("object"),
+          ),
+          SizedBox(height: 20),
+          FlutterButton(
+            height: 56,
+            child: Text(
+              "BUTTON",
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 20,
+              ),
+            ),
+            margin: const EdgeInsets.symmetric(horizontal: 24),
+            color: Colors.grey,
+            splashColor: Colors.amber,
+            padding: const EdgeInsets.all(16),
+            onPressed: () => print("object"),
+          ),
+          SizedBox(height: 20),
+          FlutterButton(
+            height: 56,
+            child: Text(
+              "BUTTON",
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 20,
+              ),
+            ),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(28),
+            ),
+            margin: const EdgeInsets.symmetric(horizontal: 24),
+            color: Colors.blueGrey,
+            splashColor: Colors.amber,
+            padding: const EdgeInsets.all(16),
+            onPressed: () => print("object"),
+          ),
         ],
       ),
     );

@@ -13,7 +13,6 @@ import 'package:flutter/widgets.dart';
 /// from the themes or from app-specific sources.
 ///
 /// on the current [Theme] and [ButtonTheme].
-@Category(<String>['Material', 'Button'])
 class FlutterButton extends StatefulWidget {
   /// Create a button based on [Semantics], [Material], and [InkWell] widgets.
   ///
@@ -52,7 +51,6 @@ class FlutterButton extends StatefulWidget {
     this.width,
     this.height,
     this.margin,
-    this.alignment,
   })  : materialTapTargetSize =
             materialTapTargetSize ?? MaterialTapTargetSize.padded,
         assert(shape != null),
@@ -282,8 +280,6 @@ class FlutterButton extends StatefulWidget {
 
   final Color color;
 
-  final Alignment alignment;
-
   @override
   _FlutterButtonState createState() => _FlutterButtonState();
 }
@@ -414,8 +410,11 @@ class _FlutterButtonState extends State<FlutterButton> {
               padding: padding,
               width: widget.width,
               height: widget.height,
-              alignment: widget.alignment,
-              child: widget.child,
+              child: Center(
+                heightFactor: 1.0,
+                widthFactor: 1.0,
+                child: widget.child,
+              ),
             ),
           ),
         ),

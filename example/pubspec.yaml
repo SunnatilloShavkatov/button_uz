@@ -11,13 +11,12 @@ dependencies:
   flutter:
     sdk: flutter
 
-  flutterbutton:
-    path: D:\Flutter\flutter_button
+  button_uz:
+    path: D:\Flutter\button_uz
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
 flutter:
-
   uses-material-design: true
