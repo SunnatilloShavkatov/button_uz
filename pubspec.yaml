@@ -1,12 +1,12 @@
 name: button_uz
 description: This button provides many conveniences. These are with, height, margin, border, raduis and others.
-version: 0.0.2
-# authors: Sunnatillo Shavkatov
+version: 0.0.3
+author: Sunnatillo Shavkatov <sunnatilloshavkatov@gmail.com>  
 homepage: https://github.com/SunnatilloQuantic/flutter_buttom
 
 environment:
-  sdk: ">=2.7.0 <3.0.0"
-  flutter: ">=1.17.0"
+  sdk: ">=2.12.0 <3.0.0"
+  flutter: ">=2.0.0"
 
 dependencies:
   flutter:

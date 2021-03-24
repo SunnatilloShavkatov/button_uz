@@ -22,8 +22,8 @@ class FlutterButton extends StatefulWidget {
   /// [elevation], [focusElevation], [hoverElevation], [highlightElevation], and
   /// [disabledElevation] must be non-negative.
   const FlutterButton({
-    Key key,
-    @required this.onPressed,
+    Key? key,
+    required this.onPressed,
     this.onLongPress,
     this.onHighlightChanged,
     this.mouseCursor,
@@ -45,7 +45,7 @@ class FlutterButton extends StatefulWidget {
     this.clipBehavior = Clip.none,
     this.focusNode,
     this.autofocus = false,
-    MaterialTapTargetSize materialTapTargetSize,
+    MaterialTapTargetSize? materialTapTargetSize,
     this.child,
     this.enableFeedback = true,
     this.width,
@@ -73,7 +73,7 @@ class FlutterButton extends StatefulWidget {
   /// See also:
   ///
   ///  * [enabled], which is true if the button is enabled.
-  final VoidCallback onPressed;
+  final VoidCallback? onPressed;
 
   /// Called when the button is long-pressed.
   ///
@@ -82,7 +82,7 @@ class FlutterButton extends StatefulWidget {
   /// See also:
   ///
   ///  * [enabled], which is true if the button is enabled.
-  final VoidCallback onLongPress;
+  final VoidCallback? onLongPress;
 
   /// Called by the underlying [InkWell] widget's [InkWell.onHighlightChanged]
   /// callback.
@@ -90,7 +90,7 @@ class FlutterButton extends StatefulWidget {
   /// If [onPressed] changes from null to non-null while a gesture is ongoing,
   /// this can fire during the build phase (in which case calling
   /// [State.setState] is not allowed).
-  final ValueChanged<bool> onHighlightChanged;
+  final ValueChanged<bool>? onHighlightChanged;
 
   /// {@template flutter.material.button.mouseCursor}
   /// The cursor for a mouse pointer when it enters or is hovering over the
@@ -106,19 +106,19 @@ class FlutterButton extends StatefulWidget {
   ///
   /// If this property is null, [MaterialStateMouseCursor.clickable] will be used.
   /// {@endtemplate}
-  final MouseCursor mouseCursor;
+  final MouseCursor? mouseCursor;
 
   /// The color for the button's [Material] when it has the input focus.
-  final Color focusColor;
+  final Color? focusColor;
 
   /// The color for the button's [Material] when a pointer is hovering over it.
-  final Color hoverColor;
+  final Color? hoverColor;
 
   /// The highlight color for the button's [InkWell].
-  final Color highlightColor;
+  final Color? highlightColor;
 
   /// The splash color for the button's [InkWell].
-  final Color splashColor;
+  final Color? splashColor;
 
   /// The elevation for the button's [Material] when the button
   /// is [enabled] but not pressed.
@@ -132,7 +132,7 @@ class FlutterButton extends StatefulWidget {
   ///    button.
   ///  * [focusElevation], the elevation when the button is focused.
   ///  * [disabledElevation], the elevation when the button is disabled.
-  final double elevation;
+  final double? elevation;
 
   /// The elevation for the button's [Material] when the button
   /// is [enabled] and a pointer is hovering over it.
@@ -148,7 +148,7 @@ class FlutterButton extends StatefulWidget {
   ///  * [focusElevation], the elevation when the button is focused.
   ///  * [disabledElevation], the elevation when the button is disabled.
   ///  * [highlightElevation], the elevation when the button is pressed.
-  final double hoverElevation;
+  final double? hoverElevation;
 
   /// The elevation for the button's [Material] when the button
   /// is [enabled] and has the input focus.
@@ -166,7 +166,7 @@ class FlutterButton extends StatefulWidget {
   ///    button.
   ///  * [disabledElevation], the elevation when the button is disabled.
   ///  * [highlightElevation], the elevation when the button is pressed.
-  final double focusElevation;
+  final double? focusElevation;
 
   /// The elevation for the button's [Material] when the button
   /// is [enabled] and pressed.
@@ -180,7 +180,7 @@ class FlutterButton extends StatefulWidget {
   ///    button.
   ///  * [focusElevation], the elevation when the button is focused.
   ///  * [disabledElevation], the elevation when the button is disabled.
-  final double highlightElevation;
+  final double? highlightElevation;
 
   /// The elevation for the button's [Material] when the button
   /// is not [enabled].
@@ -194,10 +194,10 @@ class FlutterButton extends StatefulWidget {
   ///    button.
   ///  * [focusElevation], the elevation when the button is focused.
   ///  * [highlightElevation], the elevation when the button is pressed.
-  final double disabledElevation;
+  final double? disabledElevation;
 
   /// The internal padding for the button's [child].
-  final EdgeInsetsGeometry padding;
+  final EdgeInsetsGeometry? padding;
 
   /// Defines how compact the button's layout will be.
   ///
@@ -207,12 +207,12 @@ class FlutterButton extends StatefulWidget {
   ///
   ///  * [ThemeData.visualDensity], which specifies the [visualDensity] for all widgets
   ///    within a [Theme].
-  final VisualDensity visualDensity;
+  final VisualDensity? visualDensity;
 
   /// Defines the button's size.
   ///
   /// Typically used to constrain the button's minimum size.
-  final BoxConstraints constraints;
+  final BoxConstraints? constraints;
 
   /// The shape of the button's [Material].
   ///
@@ -226,15 +226,15 @@ class FlutterButton extends StatefulWidget {
   /// * [MaterialState.hovered].
   /// * [MaterialState.focused].
   /// * [MaterialState.disabled].
-  final ShapeBorder shape;
+  final ShapeBorder? shape;
 
   /// Defines the duration of animated changes for [shape] and [elevation].
   ///
   /// The default value is [kThemeChangeDuration].
-  final Duration animationDuration;
+  final Duration? animationDuration;
 
   /// Typically the button's label.
-  final Widget child;
+  final Widget? child;
 
   /// Whether the button is enabled or disabled.
   ///
@@ -249,18 +249,18 @@ class FlutterButton extends StatefulWidget {
   /// See also:
   ///
   ///  * [MaterialTapTargetSize], for a description of how this affects tap targets.
-  final MaterialTapTargetSize materialTapTargetSize;
+  final MaterialTapTargetSize? materialTapTargetSize;
 
   /// {@macro flutter.widgets.Focus.focusNode}
-  final FocusNode focusNode;
+  final FocusNode? focusNode;
 
   /// {@macro flutter.widgets.Focus.autofocus}
-  final bool autofocus;
+  final bool? autofocus;
 
   /// {@macro flutter.widgets.Clip}
   ///
   /// Defaults to [Clip.none], and must not be null.
-  final Clip clipBehavior;
+  final Clip? clipBehavior;
 
   /// Whether detected gestures should provide acoustic and/or haptic feedback.
   ///
@@ -270,16 +270,16 @@ class FlutterButton extends StatefulWidget {
   /// See also:
   ///
   ///  * [Feedback] for providing platform-specific feedback to certain actions.
-  final bool enableFeedback;
+  final bool? enableFeedback;
 
-  final double width;
+  final double? width;
 
-  final double height;
+  final double? height;
 
-  final EdgeInsetsGeometry margin;
+  final EdgeInsetsGeometry? margin;
 
   /// The color of the button's [Material].
-  final Color color;
+  final Color? color;
 
   @override
   _FlutterButtonState createState() => _FlutterButtonState();
@@ -302,7 +302,7 @@ class _FlutterButtonState extends State<FlutterButton> {
       setState(() {
         _updateState(MaterialState.pressed, value);
         if (widget.onHighlightChanged != null) {
-          widget.onHighlightChanged(value);
+          widget.onHighlightChanged!(value);
         }
       });
     }
@@ -341,33 +341,33 @@ class _FlutterButtonState extends State<FlutterButton> {
 
   double get _effectiveElevation {
     if (_disabled) {
-      return widget.disabledElevation;
+      return widget.disabledElevation!;
     }
     if (_pressed) {
-      return widget.highlightElevation;
+      return widget.highlightElevation!;
     }
     if (_hovered) {
-      return widget.hoverElevation;
+      return widget.hoverElevation!;
     }
     if (_focused) {
-      return widget.focusElevation;
+      return widget.focusElevation!;
     }
-    return widget.elevation;
+    return widget.elevation!;
   }
 
   @override
   Widget build(BuildContext context) {
     final ShapeBorder effectiveShape =
-        MaterialStateProperty.resolveAs<ShapeBorder>(widget.shape, _states);
-    final Offset densityAdjustment = widget.visualDensity.baseSizeAdjustment;
+        MaterialStateProperty.resolveAs<ShapeBorder>(widget.shape!, _states);
+    final Offset densityAdjustment = widget.visualDensity!.baseSizeAdjustment;
     final BoxConstraints effectiveConstraints =
-        widget.visualDensity.effectiveConstraints(widget.constraints);
+        widget.visualDensity!.effectiveConstraints(widget.constraints!);
     final MouseCursor effectiveMouseCursor =
         MaterialStateProperty.resolveAs<MouseCursor>(
       widget.mouseCursor ?? MaterialStateMouseCursor.clickable,
       _states,
     );
-    final EdgeInsetsGeometry padding = widget.padding
+    final EdgeInsetsGeometry padding = widget.padding!
         .add(
           EdgeInsets.only(
             left: densityAdjustment.dx,
@@ -389,13 +389,13 @@ class _FlutterButtonState extends State<FlutterButton> {
           type: widget.color == null
               ? MaterialType.transparency
               : MaterialType.button,
-          animationDuration: widget.animationDuration,
-          clipBehavior: widget.clipBehavior,
+          animationDuration: widget.animationDuration!,
+          clipBehavior: widget.clipBehavior!,
           child: InkWell(
             focusNode: widget.focusNode,
             canRequestFocus: widget.enabled,
             onFocusChange: _handleFocusedChanged,
-            autofocus: widget.autofocus,
+            autofocus: widget.autofocus!,
             onHighlightChanged: _handleHighlightChanged,
             splashColor: widget.splashColor,
             highlightColor: widget.highlightColor,

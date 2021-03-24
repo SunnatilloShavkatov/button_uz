@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:button_uz/button_uz.dart';
 
-void main() {
+void main() =>
   runApp(MyApp());
-}
+
 
 class MyApp extends StatelessWidget {
   @override
